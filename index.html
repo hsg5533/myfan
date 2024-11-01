@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="joon102" />
+    <meta http-equiv="Copyright" content="joon102" />
+    <link rel="icon" href="./img/favicon.ico" />
+    <meta property="og:title" content="myfan-online" />
+    <meta property="og:description" content="My Online Fan" />
+    <meta property="og:image" content="./img/favicon.jpg" />
+    <meta name="robots" content="index, follow" />
+    <link href="./css/index.css" rel="stylesheet" />
+    <title>Online Fan</title>
+  </head>
+
+  <body>
+    <div class="fan-container">
+      <div class="strength-box">
+        <h3 class="strength"></h3>
+      </div>
+      <div class="who-alert">
+        <p></p>
+      </div>
+
+      <img src="./img/fan-body.png" class="fan-body" alt="Fan Body" />
+      <img src="./img/fan-blades.png" class="fan-blades" alt="Fan Blades" />
+      <img src="./img/fan-cover.png" class="fan-cover" alt="Fan Cover" />
+    </div>
+
+    <div class="modal">
+      <button class="plus" style="display: none">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="currentColor"
+          class="bi bi-plus"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"
+          />
+        </svg>
+      </button>
+      <button class="minus" style="display: none">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="currentColor"
+          class="bi bi-dash"
+          viewBox="0 0 16 16"
+        >
+          <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8" />
+        </svg>
+      </button>
+      <button id="toggleSound"></button>
+    </div>
+
+    <script src="./js/fanSound.js"></script>
+    <script>
+      var strengthElement = document.querySelector(".strength");
+      var whoAlertElement = document.querySelector(".who-alert");
+
+      const input = document.querySelector("input");
+
+      const elementsToShow = ["#toggleSound", ".plus", ".minus"];
+      elementsToShow.forEach(
+        (selector) => (document.querySelector(selector).style.display = "flex")
+      );
+
+      document.querySelector(".fan-blades").style.animation =
+        "spin 0.5s linear infinite";
+    </script>
+  </body>
+</html>
